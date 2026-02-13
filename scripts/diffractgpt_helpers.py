@@ -1,6 +1,7 @@
 from agapi.client import Agapi
 from ase.io import read, write
 import os.path
+import pandas as pd
 
 
 def predict_cif_from_data(api_key:str, data_file:str, output_paths:dict):
@@ -24,5 +25,18 @@ def predict_cif_from_data(api_key:str, data_file:str, output_paths:dict):
     write(output_paths['cif'], structure)
 
     return output_paths['cif']
+
+
+def csv_to_two_column(csv_path:str, output_path:str, header:str, col1=0, col2=1, skiprows=1):
+    # DiffractGPT like's 2 column data
+    # use ' ' delimeter
+
+    df = pd.read_csv(csv_path, skiprows=skiprows)
+    
+    # Extract two columns
+    data = df.iloc[:, [col1, col2]]
+    
+    # Write with space delimiter, no header
+    data.to_csv(output_path, sep=' ', index=False, header=header)
 
 
