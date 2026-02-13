@@ -15,35 +15,34 @@
 
  Phases:
 
- Phase name: LaB6_symmetrized
+ Phase name: Cu_symmetrized
 =======================================================================================================================================
 
  X-ray scattering factors:
    Symbol     fa                                      fb                                      fc
 ---------------------------------------------------------------------------------------------------
- La        20.57800  19.59900  11.37270   3.28719   2.94817   0.24447  18.77260 133.12400   2.14678
- B          2.05450   1.33260   1.09790   0.70680  23.21850   1.02100  60.34980   0.14030  -0.19320
+ Cu        13.33800   7.16760   5.61580   1.67350   3.58280   0.24700  11.39660  64.81260   1.19100
 
  Electron scattering factors:
    Symbol     fa                                                fb
 ---------------------------------------------------------------------------------------------------
- La         0.54610   2.38560   5.06530   5.76010   4.04630   0.14790   1.65520  10.00590  47.32450 145.84640
- B          0.04360   0.18980   0.67880   1.32730   0.55440   0.12070   1.15950   6.24740  21.04600  59.36190
+ Cu         0.35010   1.65580   1.95820   0.21340   1.41090   0.18670   1.99170  11.33960  53.26190  63.25200
 
  Neutron scattering factors:
    Symbol   isotope       mass       b       resonant terms
 ---------------------------------------------------------------------------------------------------
- La      Nat. Abund.    138.906    0.824
- B       Nat. Abund.     10.810    0.530
+ Cu      Nat. Abund.     63.546    0.772
 
- Space Group: P m -3 m
- The lattice is centrosymmetric primitive cubic
+ Space Group: F m -3 m
+ The lattice is centrosymmetric F-centered cubic
  The Laue symmetry is m3m
  The lattice point group is m3m
- Multiplicity of a general site is 48
+ Multiplicity of a general site is 192
  The inversion center is located at 0,0,0
  
  The equivalent positions are:
+
+ (0,0,0; 0,1/2,1/2; 1/2,0,1/2; 1/2,1/2,0)+
 
  ( 1)     X,     Y,     Z 
  ( 2)     Z,     X,     Y 
@@ -73,12 +72,11 @@
  Atoms:
    name    type  refine?   x         y         z      frac site sym  mult I/A   Uiso     U11     U22     U33     U12     U13     U23
 ---------------------------------------------------------------------------------------------------------------------------------------
-    La0     La          0.00000   0.00000   0.00000   1.000    m3m    1    I 0.01000                                                
-     B1      B          0.19978   0.50000   0.50000   1.000 4mm(x)    6    I 0.01000                                                
+    Cu0     Cu          0.00000   0.00000   0.00000   1.000    m3m    4    I 0.01000                                                
 
- Unit cell: a = 4.15629 b = 4.15629 c = 4.15629 alpha = 90.000 beta = 90.000 gamma = 90.000 volume = 71.799 Refine? True
+ Unit cell: a = 3.58180 b = 3.58180 c = 3.58180 alpha = 90.000 beta = 90.000 gamma = 90.000 volume = 45.952 Refine? True
 
- Phase: LaB6_symmetrized in histogram: PWDR LaB6.txt
+ Phase: Cu_symmetrized in histogram: PWDR Cu.txt
 =======================================================================================================================================
  Phase fraction  :         10 Refine? True
  Extinction coeff:     0.0000 Refine? False
@@ -95,15 +93,15 @@
  values:           0           0
  refine:       False       False
 
- Histogram: PWDR LaB6.txt histogram Id: 0
+ Histogram: PWDR Cu.txt histogram Id: 0
 =======================================================================================================================================
  Instrument type: Bragg-Brentano
- Histogram limits:    20.00 deg to    95.00 deg
+ Histogram limits:     1.00 deg to    99.99 deg
 
  Sample Parameters:
  Goniometer omega = 0.00, chi = 0.00, phi = 0.00
  name  :         Scale         Shift  Transparency    SurfRoughA    SurfRoughB
- value :        0.0540      173.4973        0.0000        0.0000        0.0000
+ value :        0.0177       -1.5157        0.0000        0.0000        0.0000
  refine:          True         False         False         False         False
 
  Instrument Parameters:
@@ -116,72 +114,69 @@
  refine:       False       False       False       False
 
  Background function: chebyschev-1 Refine? True
- Coefficients:      6.487    -2.860     1.116    -0.310    -0.003
+ Coefficients:      1.323    -1.901     0.983    -0.334     0.119
  Fixed background file: ; mult: 1.000  Refine? False
 
  Refinement results:
 ---------------------------------------------------------------------------------------------------------------------------------------
- Number of function calls: 22 No. of observations: 3751 No. of parameters: 9 User rejected: 0 Sp. gp. extinct: 0
- Refinement time =    1.004s,    0.143s/cycle, for 7 cycles
- wR =    7.90%, chi**2 =      170.906, GOF =   0.21
+ Number of function calls: 7 No. of observations: 9900 No. of parameters: 9 User rejected: 0 Sp. gp. extinct: 0
+ Refinement time =    0.445s,    0.148s/cycle, for 3 cycles
+ wR =   13.38%, chi**2 =      189.486, GOF =   0.14
 ----------------------------------------------------------------------------------------------------------------------------------
 Parameters generated by constraints
 
  name  :          0::A0
- value :        0.05788
+ value :        0.07795
  sig   :        0.00000 
 
  Phases:
- Result for phase: LaB6_symmetrized
+ Result for phase: Cu_symmetrized
 =======================================================================================================================================
  Reciprocal metric tensor: 
   names :            A11            A22            A33            A12            A13            A23
-  values:    0.057883795    0.057883795    0.057883795    0.000000000    0.000000000    0.000000000
-  esds  :    0.000000980                                                                           
+  values:    0.077946692    0.077946692    0.077946692    0.000000000    0.000000000    0.000000000
+  esds  :    0.000000577                                                                           
  New unit cell:
   names :           a           b           c       alpha        beta       gamma      Volume
-  values:    4.156440    4.156440    4.156440     90.0000     90.0000     90.0000      71.807
-  esds  :    0.000035                                                                   0.002
+  values:    3.581799    3.581799    3.581799     90.0000     90.0000     90.0000      45.952
+  esds  :    0.000013                                                                   0.001
 
  Atoms:
    name      x         y         z      frac   Uiso     U11     U22     U33     U12     U13     U23
 ---------------------------------------------------------------------------------------------------------------------------------------
-    La0     La:
+    Cu0     Cu:
  values:   0.00000   0.00000   0.00000   1.000 0.01000
  sig   :                                               
-     B1      B:
- values:   0.19978   0.50000   0.50000   1.000 0.01000
- sig   :                                               
 
- Density: 4.7121 g/cm**3
+ Density: 9.1853 g/cm**3
 
- Phase: LaB6_symmetrized in histogram: PWDR LaB6.txt
+ Phase: Cu_symmetrized in histogram: PWDR Cu.txt
 =======================================================================================================================================
- Final refinement RF, RF^2 = 2.68%, 5.91% on 14 reflections
- Durbin-Watson statistic = 0.513
- Bragg intensity sum = 1.1e+04
- Phase fraction  :     11.163, sig    0.02138 Weight fraction  :  0.00000, sig    0.00000
+ Final refinement RF, RF^2 = 8.00%, 17.71% on 5 reflections
+ Durbin-Watson statistic = 0.695
+ Bragg intensity sum = 1.91e+03
+ Phase fraction  :      10.11, sig   0.017078 Weight fraction  :  0.00000, sig    0.00000
 
- Size model:     isotropic equatorial:     0.18587, sig:  0.0022 LG mix coeff.:      1.0000
+ Size model:     isotropic equatorial:     0.72527, sig:  0.0177 LG mix coeff.:      1.0000
 
- Histogram: PWDR LaB6.txt histogram Id: 0
+ Histogram: PWDR Cu.txt histogram Id: 0
 =======================================================================================================================================
  PWDR histogram weight factor = 1.000
- Final refinement wR = 7.90% on 3751 observations in this histogram
- Other residuals: R = 4.88%, R-bkg = 10.16%, wR-bkg = 7.90% wRmin = 37.00%
+ Final refinement wR = 13.38% on 9900 observations in this histogram
+ Other residuals: R = 9.63%, R-bkg = 22.12%, wR-bkg = 13.38% wRmin = 96.73%
  Instrument type: Bragg-Brentano
 
  Resonant form factors:(ref: D.T. Cromer & D.A. Liberman (1981), Acta Cryst. A37, 267-268.)
- Element:       La        B
- f'     :   -1.418    0.009
- f"     :    9.034    0.004
+ Element:       Cu
+ f'     :   -1.965
+ f"     :    0.589
 
  Sample Parameters:
  names :         Scale         Shift  Transparency    SurfRoughA    SurfRoughB
- values:        0.0603      173.4973        0.0000        0.0000        0.0000
- sig   :        0.0001                                                        
+ values:        0.0179       -1.5157        0.0000        0.0000        0.0000
+ sig   :        0.0000                                                        
 
  Background function: chebyschev-1
- value :      6.187    -2.682      1.14   -0.2369   0.03277
- sig   :    0.01168   0.01905   0.01788   0.01493    0.0144
- Background sums: empirical 2.18e+04, Debye 0, peaks 0, Total 2.18e+04
+ value :      1.278    -1.967    0.9671   -0.3517    0.1036
+ sig   :    0.00248  0.004233  0.003856  0.002952  0.002792
+ Background sums: empirical 9.39e+03, Debye 0, peaks 0, Total 9.39e+03

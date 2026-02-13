@@ -6,7 +6,6 @@ import matplotlib.gridspec as gridspec
 import numpy as np
 
 # Import GSAS-II
-# sys.path.insert(0,os.path.expanduser("~/anaconda3/envs/GSASII/GSAS-II/GSASII")) #for Luke's laptop
 sys.path.insert(0,os.path.expanduser(r"~\gsas2full\GSAS-II\GSASII"))
 import GSASIIscriptable as gs
 from GSASIIscriptable import G2Project
@@ -120,11 +119,27 @@ def build_project(data_file: str, cif_file: str, inst_param_file: str):
     # Set controls
     set_controls(project, cycles=50, min_delta=0.0001)
 
+    #TODO set the starting intensity more intelligently like with the maximum intensity in the y_obs
+    # Set the starting intensity  
+    project.phase(0).HAPvalue('Scale',10)
+
     # Creat refinement list
     ref_list = create_refinements([project.phase(0).name])
 
-    # Run refinement
-    run_refinement(project, ref_list)
+    for ref in ref_list:
+        run_refinement(project, [ref])
+        # Print the stats
+        rwp, rmin, chi2 = get_refinement_stats(project)
+
+        print(f'Rwp: {rwp:.4f}')
+        print(f'Rmin: {rmin:.4f}')
+        print(f'Chi2: {chi2:.4f}')
+
+        # Show the plot
+        plot_xrd(project, 0)
+
+    # # Run refinement
+    # run_refinement(project, ref_list)
     
     return project
 

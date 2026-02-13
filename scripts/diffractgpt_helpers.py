@@ -24,3 +24,5 @@ def predict_cif_from_data(api_key:str, data_file:str, output_paths:dict):
     write(output_paths['cif'], structure)
 
     return output_paths['cif']
+
+
