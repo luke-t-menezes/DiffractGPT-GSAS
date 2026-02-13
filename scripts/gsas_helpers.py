@@ -40,7 +40,7 @@ def add_phase_to_project(project:G2Project, cif_file:str):
 
 def create_refinements(phase_list : list):
     # Refinement Dictionaries    
-    REF1 = {'once': {'Background': {'type': 'chebyschev-1', 'refine': True, 'no. coeffs': 5}},
+    REF1 = {'once': {'Background': {'type': 'chebyschev-1', 'refine': True, 'no. coeffs': 10}},
             'clear': {}
             }
     
@@ -71,7 +71,7 @@ def create_refinements(phase_list : list):
             'set': {'Cell': True,
                     'Size': {'type': 'isotropic', 'refine': True},
                     'Scale': True,
-                    'Background': {'type': 'chebyschev-1', 'refine': True, 'no. coeffs': 5}}, 
+                    'Background': {'type': 'chebyschev-1', 'refine': True, 'no. coeffs': 10}}, 
             'clear': {'Sample Parameters': ['Shift']}
             }
     
@@ -101,7 +101,7 @@ def get_refinement_stats(project: G2Project):
     return rwp, rmin, chi2
 
 
-def build_project(data_file: str, cif_file: str, inst_param_file: str):
+def build_project(data_file: str, cif_file: str, inst_param_file: str = 'default.instprm', plots:bool = False):
     # Build full paths
     data_path = os.path.join(XRD_DIRECTORY, data_file)
     inst_path = os.path.join(INST_PARAM_DIRECTORY, inst_param_file)
@@ -123,7 +123,8 @@ def build_project(data_file: str, cif_file: str, inst_param_file: str):
     # Set the starting intensity  
     project.phase(0).HAPvalue('Scale',10)
 
-    # Creat refinement list
+    # Create refinement list
+    #TODO make this work with a list of more than just one phase
     ref_list = create_refinements([project.phase(0).name])
 
     for ref in ref_list:
@@ -135,8 +136,9 @@ def build_project(data_file: str, cif_file: str, inst_param_file: str):
         print(f'Rmin: {rmin:.4f}')
         print(f'Chi2: {chi2:.4f}')
 
-        # Show the plot
-        plot_xrd(project, 0)
+        if plots:
+            # Show the plot
+            plot_xrd(project, 0)
 
     # # Run refinement
     # run_refinement(project, ref_list)
