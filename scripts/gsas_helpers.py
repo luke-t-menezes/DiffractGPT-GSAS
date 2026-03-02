@@ -4,9 +4,11 @@ from os.path import join
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import numpy as np
+from config.constants import GSAS2_DIRECTORY
+
 
 # Import GSAS-II
-sys.path.insert(0,os.path.expanduser(r"~\gsas2full\GSAS-II\GSASII"))
+sys.path.insert(0,os.path.expanduser(GSAS2_DIRECTORY))
 import GSASIIscriptable as gs
 from GSASIIscriptable import G2Project
 

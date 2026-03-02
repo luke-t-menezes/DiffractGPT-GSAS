@@ -6,3 +6,5 @@ DiffractGPT_example.ipynb
 *.gpx
 *.lst
 *.vasp
+
+.claude/
