@@ -7,10 +7,15 @@ import numpy as np
 from config.constants import GSAS2_DIRECTORY
 
 
-# Import GSAS-II
-sys.path.insert(0,os.path.expanduser(GSAS2_DIRECTORY))
-import GSASIIscriptable as gs
-from GSASIIscriptable import G2Project
+# Import GSAS-II (handles both new package-style and old flat installations)
+try:
+    sys.path.insert(0, os.path.expanduser(r'~\gsas2main\GSAS-II'))
+    from GSASII import GSASIIscriptable as gs
+    from GSASII.GSASIIscriptable import G2Project
+except (ImportError, ModuleNotFoundError):
+    sys.path.insert(0, os.path.expanduser(r'~\gsas2full\GSAS-II\GSASII'))
+    import GSASIIscriptable as gs
+    G2Project = gs.G2Project
 
 # Import constants
 from config.constants import GPX_DIRECTORY, CIF_DIRECTORY, XRD_DIRECTORY, INST_PARAM_DIRECTORY
